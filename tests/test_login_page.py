@@ -15,7 +15,12 @@ class TestLoginPage:
         d.find_element(*LoginPageLocators.LOGIN_FORM).send_keys("standard_user")
         d.find_element(*LoginPageLocators.PASSWORD_FORM).send_keys("secret_sauce")
         d.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
+
+        assert d.title == 'Swag Labs', 'Wrong title'
+
         assert d.current_url == "https://www.saucedemo.com/inventory.html"
+
+    def test_logout(self, d):
 
         # logout
         d.find_element(*BurgerMenuLocators.BURGER_MENU).click()

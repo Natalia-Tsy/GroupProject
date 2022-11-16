@@ -45,3 +45,24 @@ class ProductPageLocators:
     SHOPPING_CART_LINK = (By.CSS_SELECTOR, ".shopping_cart_link")
     SORT_DROPDOWN = (By.CLASS_NAME, "select_container")
     PRICE_LOW_TO_HIGH = (By.CSS_SELECTOR, "[value='lohi']")
+
+
+class YourCartPage:
+    CHECKOUT_BUTTON = (By.ID, "checkout")
+
+
+class YourInfoPageLocators:
+    YOUR_FIRST_NAME = (By.ID, "first-name")
+    YOUR_LAST_NAME = (By.ID, "last-name")
+    YOUR_ZIP = (By.ID, "postal-code")
+    YOUR_CONTINUE = (By.ID, "continue")
+
+class CheckoutOverviewLocators:
+    QUANTITY_LABEL = (By.CSS_SELECTOR, ".cart_quantity_label")
+    DESCRIPTION_LABEL = (By.CSS_SELECTOR, ".cart_desc_label")
+    FINISH_BUTTON = (By.ID, "finish")
+
+
+class CheckoutCompleteLocators:
+    HEADER_MESSAGE = (By.CSS_SELECTOR, "h2.complete-header")
+    TEXT_MESSAGE = (By.CLASS_NAME, "complete-text")
