@@ -1,5 +1,8 @@
-from pages.locators import LoginPageLocators, ProductPageLocators, YourCartPage
-from pages.locators import YourInfoPageLocators, CheckoutOverviewLocators, CheckoutCompleteLocators
+from pages.locators import ProductPageLocators, YourCartPage
+from pages.locators import YourInfoPageLocators
+from pages.locators import CheckoutCompleteLocators
+from pages.locators import CheckoutOverviewLocators
+from pages.locators import LoginPageLocators
 import conf
 
 
@@ -12,7 +15,7 @@ class TestPlaceOrder:
         d.find_element(*LoginPageLocators.PASSWORD_FORM).send_keys("secret_sauce")
         d.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
 
-        assert d.title == 'Swag Labs', 'Wrong title'
+        assert d.title == "Swag Labs", "Wrong title"
         assert d.current_url == "https://www.saucedemo.com/inventory.html"
 
         d.find_element(*ProductPageLocators.SAUCE_LABS_BACKPACK_ADD_TO_CART).click()
@@ -36,4 +39,7 @@ class TestPlaceOrder:
         header_message = d.find_element(*CheckoutCompleteLocators.HEADER_MESSAGE)
         text_message = d.find_element(*CheckoutCompleteLocators.TEXT_MESSAGE)
         assert header_message.text == "THANK YOU FOR YOUR ORDER"
-        assert text_message.text == "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
+        assert (
+            text_message.text == "Your order has been dispatched,"
+            " and will arrive just as fast as the pony can get there!"
+        )

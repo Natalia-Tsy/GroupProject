@@ -57,6 +57,7 @@ class YourInfoPageLocators:
     YOUR_ZIP = (By.ID, "postal-code")
     YOUR_CONTINUE = (By.ID, "continue")
 
+
 class CheckoutOverviewLocators:
     QUANTITY_LABEL = (By.CSS_SELECTOR, ".cart_quantity_label")
     DESCRIPTION_LABEL = (By.CSS_SELECTOR, ".cart_desc_label")
