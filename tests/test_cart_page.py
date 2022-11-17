@@ -10,8 +10,11 @@ class TestAddToCart:
 
         # login
         d.find_element(*LoginPageLocators.LOGIN_FORM).send_keys("standard_user")
+
         d.find_element(*LoginPageLocators.PASSWORD_FORM).send_keys("secret_sauce")
+
         d.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
+
         assert d.current_url == "https://www.saucedemo.com/inventory.html"
 
         add_to_cart_button = d.find_element(
@@ -22,6 +25,7 @@ class TestAddToCart:
         d.find_element(*ProductPageLocators.SAUCE_LABS_BACKPACK_ADD_TO_CART).click()
 
         shopping_cart = d.find_element(*ProductPageLocators.SHOPPING_CART_LINK).text
+
         assert shopping_cart == "1"
 
         remove_from_cart_button = d.find_element(
@@ -34,4 +38,5 @@ class TestAddToCart:
         ).click()
 
         shopping_cart = d.find_element(*ProductPageLocators.SHOPPING_CART_LINK).text
+
         assert shopping_cart == ""

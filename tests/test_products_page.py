@@ -11,8 +11,11 @@ class TestProductPage:
         assert d.current_url == conf.URL
         # login
         d.find_element(*LoginPageLocators.LOGIN_FORM).send_keys("standard_user")
+
         d.find_element(*LoginPageLocators.PASSWORD_FORM).send_keys("secret_sauce")
+
         d.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
+
         assert d.current_url == "https://www.saucedemo.com/inventory.html"
 
         inventory_list = d.find_elements(*ProductPageLocators.INVENTORY_LIST)

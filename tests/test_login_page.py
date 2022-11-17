@@ -13,7 +13,9 @@ class TestLoginPage:
 
         # login
         d.find_element(*LoginPageLocators.LOGIN_FORM).send_keys("standard_user")
+
         d.find_element(*LoginPageLocators.PASSWORD_FORM).send_keys("secret_sauce")
+
         d.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
 
         assert d.title == "Swag Labs", "Wrong title"
